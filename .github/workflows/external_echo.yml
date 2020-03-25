@@ -8,5 +8,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-  steps:
-    - echo "externally executed echo!"
+    steps:
+    - name: echo
+      run: echo externally executed echo
