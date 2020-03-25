@@ -1,0 +1,12 @@
+name: external echo command
+
+on:
+  repository_dispatch:
+    types: [external-echo]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+  steps:
+    - echo "externally executed echo!"
