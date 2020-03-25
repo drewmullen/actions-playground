@@ -16,4 +16,5 @@ jobs:
       run: |
         pwd
         ls -la
+        ls -la ../
         cat ${{ github.workspace	}}/output.txt
