@@ -13,4 +13,4 @@ jobs:
 
     steps:
     - name: echo
-      run: echo externally executed echo
+      run: echo externally executed echo updated
