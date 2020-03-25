@@ -13,4 +13,7 @@ jobs:
 
     steps:
     - name: cat repo file
-      run: cat output.txt
+      run: |
+        pwd
+        ls -la
+        cat ${{ github.workspace	}}/output.txt
