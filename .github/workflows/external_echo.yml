@@ -1,6 +1,10 @@
 name: external echo command
 
 on:
+  pull_request:
+    paths: 'awslambda/asg_ebs_attach/**'
+    branches:
+      - master
   repository_dispatch:
     types: [external-echo]
 
