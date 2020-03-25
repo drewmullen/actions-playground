@@ -12,5 +12,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+<<<<<<< HEAD
     - name: cat repo file
       run: cat output.txt
+=======
+    - name: echo
+      run: echo externally executed echo updated
+>>>>>>> test pr
