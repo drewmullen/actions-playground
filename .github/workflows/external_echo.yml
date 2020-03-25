@@ -17,4 +17,5 @@ jobs:
         pwd
         ls -la
         ls -la ../
+        cat /github/workspace/output.txt
         cat ${{ github.workspace	}}/output.txt
