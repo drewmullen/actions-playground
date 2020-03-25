@@ -12,5 +12,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: echo
-      run: echo externally executed echo
+    - name: cat repo file
+      run: cat output.txt
