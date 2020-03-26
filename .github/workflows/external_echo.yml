@@ -14,6 +14,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: test-pr2
+        ref: ${{ github.ref }}
     - name: cat repo file
       run: cat output.txt
