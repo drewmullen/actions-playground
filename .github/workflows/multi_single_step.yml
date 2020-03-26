@@ -1,0 +1,18 @@
+name: multi dir repo dispatch
+
+on:
+  repository_dispatch:
+    types: [multi-dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.client_payload.ref }}
+
+    - name: cat repo file
+      run: cat output.txt
+      working-directory: ${{ github.event.client_payload.project }}
