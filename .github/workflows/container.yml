@@ -1,0 +1,18 @@
+name: external echo command from container
+
+on:
+  repository_dispatch:
+    types: [container-echo]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    container:
+      image: lambci/lambda:build-python3.7@sha256:3cfeb4c0d8fe26588918720014f13018b8c50bad89fdd5aa7ac58c25f90869ae
+
+    steps:
+    - name: echo from container
+      run: |
+        echo hello from container land
+        cat output.txt
