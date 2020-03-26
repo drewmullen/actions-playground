@@ -44,6 +44,19 @@ curl -XPOST -u "drewmullen" \
 
 [Example CI Output](https://github.com/drewmullen/actions-playground/runs/536598658?check_suite_focus=true)
 
+
+## Multiple dirs, same step
+
+[multi_single_step.yml](https://github.com/drewmullen/actions-playground/blob/fd3721ba3c8350995a77c570fbf3a0e0fb1c2724/.github/workflows/multi_single_step.yml)
+[Example CI Output](https://github.com/drewmullen/actions-playground/runs/536824189?check_suite_focus=true)
+
+
+## Run from a container
+
+[container.yml](https://github.com/drewmullen/actions-playground/blob/fd3721ba3c8350995a77c570fbf3a0e0fb1c2724/.github/workflows/container.yml)
+[Example CI Output](https://github.com/drewmullen/actions-playground/runs/536598658?check_suite_focus=true)
+
+
 ## Create a PAT
 
 https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line
