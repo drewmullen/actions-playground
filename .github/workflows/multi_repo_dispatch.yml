@@ -1,0 +1,26 @@
+name: external echo command
+
+on:
+  repository_dispatch:
+    types: [my-dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.client_payload.ref }}
+
+    - name: cat repo file
+      run: cat output.txt
+      if: github.event.client_payload.project == 'root'
+
+    - name: cat repo file
+      run: cat dir1/output.txt
+      if: github.event.client_payload.project == 'dir1'
+
+    - name: cat repo file
+      run: cat dir2/output.txt
+      if: github.event.client_payload.project == 'dir2'
