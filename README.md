@@ -1,5 +1,7 @@
 # Execute a github workflow manually
 
+Below are several examples for how to kick off workflow jobs manually via curl (or any external event)
+
 ## Create workflow at .github/workflows/file.yml
 
 Notice the `event_type` [matches](https://github.com/drewmullen/actions-playground/blob/fd3721ba3c8350995a77c570fbf3a0e0fb1c2724/.github/workflows/external_echo.yml#L5) the workflow field: `on.repository_dispatch.types`. the workflow file name does not need to match.
