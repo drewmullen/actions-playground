@@ -18,7 +18,7 @@ Enter host password for user 'drewmullen': <YOUR PAT>
 
 ## Specify a branch
 
-`repository_dispatch` always uses master branch. To use another branch, view [this workflow](https://github.com/drewmullen/actions-playground/blob/fd3721ba3c8350995a77c570fbf3a0e0fb1c2724/.github/workflows/repo_dispatch.yml) and set `client_payload.ref`:
+`repository_dispatch` always uses master branch. To use another branch, view [this workflow](https://github.com/drewmullen/actions-playground/blob/master/.github/workflows/repo_dispatch.yml) and set `client_payload.ref`:
 
 ```bash
 curl -XPOST -u "drewmullen" \
@@ -32,7 +32,7 @@ curl -XPOST -u "drewmullen" \
 
 ## Condition steps to run based on input
 
-If you'd like the same event to kick of specific jobs, use the `if` [condition](https://github.com/drewmullen/actions-playground/blob/fd3721ba3c8350995a77c570fbf3a0e0fb1c2724/.github/workflows/multi_repo_dispatch.yml).
+If you'd like the same event to kick of specific jobs, use the `if` [condition](https://github.com/drewmullen/actions-playground/blob/master/.github/workflows/multi_repo_dispatch.yml).
 
 ```bash
 curl -XPOST -u "drewmullen" \
@@ -47,13 +47,15 @@ curl -XPOST -u "drewmullen" \
 
 ## Multiple dirs, same step
 
-[multi_single_step.yml](https://github.com/drewmullen/actions-playground/blob/fd3721ba3c8350995a77c570fbf3a0e0fb1c2724/.github/workflows/multi_single_step.yml)
+[multi_single_step.yml](https://github.com/drewmullen/actions-playground/blob/master/.github/workflows/multi_single_step.yml)
+
 [Example CI Output](https://github.com/drewmullen/actions-playground/runs/536824189?check_suite_focus=true)
 
 
 ## Run from a container
 
-[container.yml](https://github.com/drewmullen/actions-playground/blob/fd3721ba3c8350995a77c570fbf3a0e0fb1c2724/.github/workflows/container.yml)
+[container.yml](https://github.com/drewmullen/actions-playground/blob/master/.github/workflows/container.yml)
+
 [Example CI Output](https://github.com/drewmullen/actions-playground/runs/536598658?check_suite_focus=true)
 
 
