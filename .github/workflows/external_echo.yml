@@ -1,9 +1,6 @@
 name: external echo command
 
 on:
-  pull_request:
-    branches:
-      - master
   repository_dispatch:
     types: [external-echo]
 
@@ -12,8 +9,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-      with:
-        ref: ${{ github.ref }}
-    - name: cat repo file
-      run: cat output.txt
+    - name: echo
+      run: echo externally executed echo

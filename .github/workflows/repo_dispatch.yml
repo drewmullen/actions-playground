@@ -1,0 +1,28 @@
+name: external echo command
+
+on:
+  pull_request:
+    branches:
+      - master
+  repository_dispatch:
+    types: [my-dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Repository Dispatch
+      uses: peter-evans/repository-dispatch@v1
+      with:
+        token: ${{ secrets.REPO_ACCESS_TOKEN }}
+        repository: drewmullen/actions-playground
+        event-type: my-event
+        client-payload: '{"ref": "${{ github.ref }}"}'
+
+    # - uses: actions/checkout@v2
+    #   with:
+    #     ref: ${{ github.ref }}
+
+    - name: cat repo file
+      run: cat output.txt
