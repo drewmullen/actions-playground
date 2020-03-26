@@ -1,4 +1,4 @@
-name: external echo command
+name: multi dir repo dispatch
 
 on:
   repository_dispatch:
