@@ -2,7 +2,7 @@ name: multi dir repo dispatch
 
 on:
   repository_dispatch:
-    types: [multi-dispatch]
+    types: [multi-dispatch-single-step]
 
 jobs:
   build:
