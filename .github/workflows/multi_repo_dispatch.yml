@@ -2,7 +2,7 @@ name: external echo command
 
 on:
   repository_dispatch:
-    types: [my-dispatch]
+    types: [multi-dispatch]
 
 jobs:
   build:
