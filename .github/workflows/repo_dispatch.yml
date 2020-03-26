@@ -1,9 +1,6 @@
 name: external echo command
 
 on:
-  pull_request:
-    branches:
-      - master
   repository_dispatch:
     types: [my-dispatch]
 
