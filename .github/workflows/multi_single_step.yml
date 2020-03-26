@@ -1,4 +1,4 @@
-name: multi dir repo dispatch
+name: multi dir repo dispatch with a single step
 
 on:
   repository_dispatch:
