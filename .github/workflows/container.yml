@@ -16,5 +16,7 @@ jobs:
     - name: echo from container
       run: |
         echo hello from container land
+        pwd
+        ls -l /
         python --version
         cat output.txt
