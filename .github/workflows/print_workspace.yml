@@ -1,0 +1,20 @@
+name: multi dir repo dispatch
+
+on:
+  repository_dispatch:
+    types: [print-workspace]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - run: echo ${{ GITHUB_WORKSPACE }}
+
+
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.client_payload.ref }}
+
+    - run: echo ${{ GITHUB_WORKSPACE }}
+    - name: cat repo file
