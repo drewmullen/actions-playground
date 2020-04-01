@@ -13,12 +13,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        path: test 
     - name: echo from container
       run: |
         echo hello from container land
         pwd
+        ls -l $HOME
         echo $HOME
         ls -l
+        echo 'test/'
+        ls -l /test
         echo "github/home"
         #ls -l /
         #ls -l /github
