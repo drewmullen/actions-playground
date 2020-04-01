@@ -33,12 +33,8 @@ jobs:
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'content-type: application/json')
         echo $resp
-        sha=$(jq -r '.head.sha' <<< "$resp")
-        echo "::set-output name=head_sha::$sha"
-        # comments_url=$(jq -r '.comments_url' <<< "$resp")
-        # echo "::set-output name=comments_url::$comments_url"
-        # branch=$(jq -r '.branch' <<< "$resp")
-        # echo "::set-output name=comments_url::$comments_url"
+        branch=$(jq -r '.head.ref' <<< "$resp")
+        echo "::set-output name=branch::$branch"
 
     # - uses: actions/checkout@v2
     #   with:
