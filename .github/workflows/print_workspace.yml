@@ -10,10 +10,10 @@ jobs:
 
     steps:
     - name: echo workspace before
-      run: echo ${{ GITHUB_WORKSPACE }}
+      run: echo $GITHUB_WORKSPACE
 
 
     - uses: actions/checkout@v2
 
     - name: echo workspace after
-      run: echo ${{ GITHUB_WORKSPACE }}
+      run: echo $GITHUB_WORKSPACE
