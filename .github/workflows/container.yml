@@ -17,7 +17,9 @@ jobs:
       run: |
         echo hello from container land
         pwd
-        ls -l /
-        ls -l /github
+        echo $HOME
+        #ls -l /
+        #ls -l /github
+        ls -l /github/home
         python --version
         cat output.txt
