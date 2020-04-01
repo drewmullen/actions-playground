@@ -18,8 +18,12 @@ jobs:
         echo hello from container land
         pwd
         echo $HOME
+        ls -l
+        echo "github/home"
         #ls -l /
         #ls -l /github
         ls -l /github/home
+        echo "github/workflow"
+        ls -l /github/workflow
         python --version
         cat output.txt
