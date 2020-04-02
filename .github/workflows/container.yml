@@ -18,4 +18,5 @@ jobs:
       run: |
         echo hello from container land
         python --version
+        cat output.txt
         cat ${{ github.workspace }}/output.txt
