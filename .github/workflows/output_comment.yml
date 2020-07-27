@@ -27,23 +27,3 @@ jobs:
       with:
         comment-id: ${{ github.event.comment.id }}
         body: "test"
-
-    # - name: 'Load PR Details'
-    #   id: load-pr
-    #   run: |
-    #     set -eu
-    #     resp=$(curl -sSf \
-    #       --url ${{ github.event.issue.pull_request.url }} \
-    #       --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-    #       --header 'content-type: application/json')
-    #     echo $resp
-    #     branch=$(jq -r '.head.ref' <<< "$resp")
-    #     echo "::set-output name=branch::$branch"
-
-    # - uses: actions/checkout@v2
-    #   with:
-    #     ref: ${{ github.event.client_payload.ref }}
-
-    # - name: cat repo file
-    #   run: cat output.txt
-    #   working-directory: ${{ github.event.client_payload.project }}
