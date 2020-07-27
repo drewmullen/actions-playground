@@ -5,7 +5,7 @@ on:
     types: [created]
 
 jobs:
-  build:
+  echo-chamber:
     if: >
       startsWith(github.event.comment.body, 'echo')
       && startsWith(github.event.issue.pull_request.url, 'https://')
