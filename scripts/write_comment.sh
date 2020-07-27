@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # This script will write a comment on the github PR that calls it
-content="yo\n
+content="yo
 hello"
 
 content="${content//'%'/'%25'}"
