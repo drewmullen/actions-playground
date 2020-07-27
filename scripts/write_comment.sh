@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 # This script will write a comment on the github PR that calls it
-line="yo\n
+content="yo\n
 hello"
 
-line= "${line//$'\n'/'%0A'}"
-
-echo "::set-output name=reverb::$line"
+content="${content//'%'/'%25'}"
+content="${content//$'\n'/'%0A'}"
+content="${content//$'\r'/'%0D'}"
+echo "::set-output name=reverb::$content"
