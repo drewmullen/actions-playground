@@ -4,7 +4,7 @@
 content="yo
 hello"
 
-content+="%0Ayo!"
+content+="\nyo!"
 
 content="${content//'%'/'%25'}"
 content="${content//$'\n'/'%0A'}"
