@@ -13,8 +13,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: print comment body
-      run: echo ${{ github.event.comment.body }}
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.client_payload.ref }}
 
     - name: set body comments
       id: listen
@@ -35,3 +36,4 @@ jobs:
         comment-id: ${{ github.event.comment.id }}
         body: |
            ${{ steps.tunnel.outputs.reverb }}
+           test \n test
