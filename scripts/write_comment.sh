@@ -4,6 +4,8 @@
 content="yo
 hello"
 
+content+="\nyo!"
+
 content="${content//'%'/'%25'}"
 content="${content//$'\n'/'%0A'}"
 content="${content//$'\r'/'%0D'}"
