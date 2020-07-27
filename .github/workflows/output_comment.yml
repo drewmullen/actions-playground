@@ -31,7 +31,7 @@ jobs:
 
     - uses: actions/github-script@v2
       env:
-        output: ${{ steps.tunnel.outputs.reverb }}
+        output: ${{ steps.listen.outputs.reverb }}
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
