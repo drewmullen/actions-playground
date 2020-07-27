@@ -34,11 +34,12 @@ jobs:
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
+          const output = ${{ steps.tunnel.outputs.reverb }}
           github.issues.createComment({
             issue_number: context.issue.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
-            body: ${{ steps.tunnel.outputs.reverb }}
+            body: output
           })
 
     # - name: write a comment
