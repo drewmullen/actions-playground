@@ -17,13 +17,15 @@ jobs:
       run: echo ${{ github.event.comment.body }}
 
     - name: set body comments
+      id: listen
       run: |
         set -eu
         content=$( cut -d ' ' -f 2 <<< '${{ github.event.comment.body }}' )
-        echo $content
+        echo "::set-output name=content::$content"
 
     - name: write a comment
       uses: peter-evans/create-or-update-comment@v1
       with:
         comment-id: ${{ github.event.comment.id }}
-        body: "test"
+        body: |
+           ${{ steps.listen.outputs.content }}
