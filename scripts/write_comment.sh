@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 # This script will write a comment on the github PR that calls it
-line="yo\nhello"
+line="yo\n
+hello"
 
 line= "${line//$'\n'/'%0A'}"
 
