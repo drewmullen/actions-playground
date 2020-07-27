@@ -29,3 +29,4 @@ jobs:
         comment-id: ${{ github.event.comment.id }}
         body: |
            ${{ steps.listen.outputs.content }}
+
