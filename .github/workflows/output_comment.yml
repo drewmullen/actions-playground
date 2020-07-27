@@ -30,11 +30,22 @@ jobs:
         bash -x scripts/write_comment.sh ${content}
 
 
-    - name: write a comment
-      uses: peter-evans/create-or-update-comment@v1
-      with:
-        comment-id: ${{ github.event.comment.id }}
-        body: |
-           ${{ steps.tunnel.outputs.reverb }}
-           test \n test
+      - uses: actions/github-script@v2
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: "${{ steps.tunnel.outputs.reverb }}"
+            })
+
+    # - name: write a comment
+    #   uses: peter-evans/create-or-update-comment@v1
+    #   with:
+    #     comment-id: ${{ github.event.comment.id }}
+    #     body: |
+    #        ${{ steps.tunnel.outputs.reverb }}
+    #        test \n test
 
