@@ -31,8 +31,6 @@ jobs:
 
 
     - uses: actions/github-script@v2
-      env:
-        output: ${{ steps.tunnel.outputs.reverb }}
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
@@ -40,8 +38,21 @@ jobs:
             issue_number: context.issue.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
-            body: process.env.output
+            body: context.steps.tunnel.outputs.reverb
           })
+
+#     - uses: actions/github-script@v2
+#       env:
+#         output: ${{ steps.tunnel.outputs.reverb }}
+#       with:
+#         github-token: ${{secrets.GITHUB_TOKEN}}
+#         script: |
+#           github.issues.createComment({
+#             issue_number: context.issue.number,
+#             owner: context.repo.owner,
+#             repo: context.repo.repo,
+#             body: process.env.output
+#           })
 
     # - name: write a comment
     #   uses: peter-evans/create-or-update-comment@v1
