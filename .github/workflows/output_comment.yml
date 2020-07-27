@@ -38,7 +38,7 @@ jobs:
             issue_number: context.issue.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
-            body: "${{ steps.tunnel.outputs.reverb }}"
+            body: "test"
           })
 
     # - name: write a comment
