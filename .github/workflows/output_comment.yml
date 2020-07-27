@@ -22,7 +22,7 @@ jobs:
       run: |
         set -eu
         content=$( cut -d ' ' -f 2 <<< '${{ github.event.comment.body }}' )
-        echo "::set-output name=content::$content"
+        echo "::set-output name=content::this is a test%0A%0Aand a new line"
 
     - name: multiply in tunnel
       id: tunnel
