@@ -42,12 +42,3 @@ jobs:
             body: "The these lambda versions have been updated:" +
             process.env.output
             })
-
-    # - name: write a comment
-    #   uses: peter-evans/create-or-update-comment@v1
-    #   with:
-    #     comment-id: ${{ github.event.comment.id }}
-    #     body: |
-    #        ${{ steps.tunnel.outputs.reverb }}
-    #        test \n test
-
