@@ -1,16 +1,5 @@
 name: test checkout on diff versions
 
-# lambda-build.yml overview:
-#
-# Github Actions event listener for PR comments. L23 declares comment content to trigger workflow
-#  Comment Format:
-#  build <build directory> <buckets space separated>
-#
-#  Ex of PR comment:
-#  build awslambda/asg_ebs_attach bucket1 bucket2
-#
-#  above will build the lambda bundle for asg_ebs_attach and publish it to bucket{1,2}
-
 on:
   issue_comment:
     types: [created]
@@ -25,6 +14,10 @@ jobs:
     container:
       image: drewmullen/lambda-build-python:0.1
     steps:
+
+      - name: echo
+        run: |
+          echo something
 
       - name: 'Checkout from PR Branch'
         uses: actions/checkout@v2
