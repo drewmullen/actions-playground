@@ -28,3 +28,5 @@ jobs:
 
       - name: 'Checkout from PR Branch'
         uses: actions/checkout@v2
+        with:
+          ref: b034ce5b441f83860e844628e1086e1bb29452b0
