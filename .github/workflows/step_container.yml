@@ -26,24 +26,5 @@ jobs:
       image: alpine/git
     steps:
 
-      - name: 'Load PR Details'
-        id: load-pr
-        run: |
-          set -eu
-          resp=$(curl -sSf \
-            --url ${{ github.event.issue.pull_request.url }} \
-            --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-            --header 'content-type: application/json')
-          branch=$(python3 -c "import sys, json; print(json.load(sys.stdin)['head']['ref'])" <<< "$resp")
-          echo "::set-output name=branch::$branch"
-
-      - name: Pulls Repository Code
-        uses: actions/checkout@28c7f3d2
-        with:
-          ref: ${{ steps.load-pr.outputs.branch }}
-
       - name: 'Checkout from PR Branch'
         uses: actions/checkout@v2
-        with:
-          ref: ${{ steps.load-pr.outputs.branch }}
-          token: ${{ secrets.REPO_PAT }}
